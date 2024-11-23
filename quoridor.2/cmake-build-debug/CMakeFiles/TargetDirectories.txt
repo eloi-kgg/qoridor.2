@@ -1,0 +1,3 @@
+C:/Users/pierr/Bureau/informatique/quoridor.2/cmake-build-debug/CMakeFiles/quoridor_2.dir
+C:/Users/pierr/Bureau/informatique/quoridor.2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/pierr/Bureau/informatique/quoridor.2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
