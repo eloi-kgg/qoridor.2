@@ -76,7 +76,7 @@ int main(void)
 
         choixact(poinchact);
         printf("%d\n",chact);
-        if (chact == 1) {barrieres(coordb);}
+        if (chact == 1) {barrieres(plate,coordb);}
         else if (chact == 2){move(plate,nbj,a,b,c,d,gagn);}//déplacement du premier joueur
 
         plateau(plate); //remise a 0 du plateau
@@ -87,9 +87,8 @@ int main(void)
 
         choixact(poinchact);
         printf("%d\n",chact);
-        if (chact == 1) {barrieres(coordb);}
+        if (chact == 1) {barrieres(plate,coordb);}
         else if (chact == 2){move(plate,nbj,b,a,c,d,gagn);}//déplacement du premier joueur
-        plateau(plate); //remise a 0 du plateau
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
         placementb(plate,coordb);
         affiche(plate); //affichage du plateau avec les pions

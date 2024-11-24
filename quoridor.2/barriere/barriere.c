@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include "barriere.h"
 
+
 //module barrières
-void barrieres(int coordb[3])
+void barrieres(char plate[N][N], int coordb[3])
 {
     char min, MAJ;
     int ligne = 0,colonne = 0;
@@ -14,25 +15,33 @@ void barrieres(int coordb[3])
     printf("Ensuite vous choisirez le sens dans lequel vous placerez votre barriere\n");
     do {
         do {
-            printf("veuillez choisir une coordonnees minuscule\n");
+            printf("Veuillez choisir une coordonnees minuscule\n");
             fflush(stdin);
             scanf("%c",&min);
             if (min>='a' && min<='h') {fin = 1;}
         }while(fin !=1 );
         fin = 0;
         do {
-            printf("veuillez choisir une coordonnees MAJUSCULE\n");
+            printf("Veuillez choisir une coordonnees MAJUSCULE\n");
             fflush(stdin);
             scanf("%c",&MAJ);
             if (MAJ>='A' && MAJ<='H') {fin = 1;}
         }while(fin !=1 );
         printf("Vous avez choisi %c et %c \n",min,MAJ);
         printf("Entrer 1 pour confirmer, 0 pour reentrer les coordonnees de la barriere\n");
-        fflush(stdin);
-        scanf("%d",&confirm);
+
+        ligne = 2*(MAJ - 65) + 3;
+        colonne = 2*(min - 97) + 3;
+        if(plate[ligne][colonne] == 'B') {
+            printf("Il y deja une barriere a ces coordonnees\n");
+            confirm = 0;
+        }
+        else {
+            fflush(stdin);
+            scanf("%d",&confirm);
+        }
     }while(confirm != 1);
-    ligne = 2*(MAJ - 65) + 3;
-    colonne = 2*(min - 97) + 3;
+
     coordb[0] = ligne;
     coordb[1] = colonne;
 
