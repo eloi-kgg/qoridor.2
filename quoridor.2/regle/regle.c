@@ -2,11 +2,6 @@
 #include "regle.h"
 
 void regle() {
-    char regle;
-    printf("Si vous voulez afficher les regles, entrer 'r'\n");
-    scanf("%c", &regle);
-
-    if(regle == 'r') {
         printf("        REGLE DU JEU DU QUORIDOR:\n "
                "-Le but du jeu: ammener son pion de l'autre cote du plateau de jeu\n "
                "-Le jeu se joue a 2 ou 4 joueurs,au debut de la partie, chaque joueur place son pion au centre de sa ligne de depart\n "
@@ -18,4 +13,3 @@ void regle() {
                "le joueur choisit si son pion atterrit a droite ou a gauche de l'autre pion\n "
                "-Dans ce jeu qui allie stratageme et reflexion, qui saura trouver le bon chemin ?\n\n");
     }
-}

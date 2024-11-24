@@ -17,6 +17,7 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
     int valide = 0;
     int valide2 = 0;
     placement2(plate,a,b); //placement des pions en début de jeu pour deux joueurs
+
     do {
         affiche(plate); //affichage du plateau avec les pions
         do {
@@ -37,10 +38,13 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
         }//déplacement du premier joueur
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
         placementb(plate,coordb);
+
         gagner(a,b,c,d,pfin);
 
+        if (fin == 1){return;}
 
         affiche(plate); //affichage du plateau avec les pions
+
         do {
             printf("Voulez-vous placer une barriere ou vous deplacer ?\n");
             printf("Pour placer une barriere taper : 1 \n");
@@ -50,6 +54,7 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
             if (chact == 1 || chact == 2){valide2 = 1;}
             else {printf("Entree invalide\n");}
         }while (valide2 != 1);
+
         if (chact == 1) {
             barrieres(plate,coordb);
         }
@@ -59,7 +64,10 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
 
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
         placementb(plate,coordb);
+
         gagner(a,b,c,d,pfin);
+
+        if (fin == 1){return;}
     }while(fin != 1);
 
 }

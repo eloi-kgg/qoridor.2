@@ -14,8 +14,7 @@
 #include "sauvegarde/sauvegarde.h"
 #include "partie2/partie2.h"
 
-int main(void)
-{
+int main(void) {
     //Dans le plateau les ligne sont la premières valeur du plateau et les colonnes la deuxième, donc des postions : y;x
     //les minuscule correspondent aux colonnes : x
     //les majuscules aux lignes : y
@@ -45,16 +44,22 @@ int main(void)
     int nbj = 2; //choix du nombre de joueur
     int* pnbj = &nbj;
 
-
     int score[4][2] = {{101,0},{102,0},{103,0},{104,0}};//sauvegarde des scores de chacun des joueurs, {id,score}
 
-    regle();
 
+    do{
+        if(menuprim(poinchoix) == 0) {
+            return 0;
+        }
 
+        if (choix == 2) {
+            //afficher le score
+        }
+        if (choix == 3) {
+            regle();
+        }
+    }while (choix !=1);
 
-    if(menuprim(poinchoix) == 0) {
-        return 0;
-    }
     crpseudo(name,pnbj);
     plateau(plate); //initialisation plateau
     do {
