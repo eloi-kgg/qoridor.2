@@ -3,7 +3,7 @@
 #include "../sauvegarde/sauvegarde.h"
 
 void quitter(int *pquitte) {
-    printf("\t\tEntrer '0' pour quitter la partie\n");
+    printf("\t\tEntrer '1' pour quitter la partie\n");
     fflush(stdin);
     scanf("%d", pquitte);
     printf("%d", *pquitte);

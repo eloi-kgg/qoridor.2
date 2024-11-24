@@ -63,3 +63,15 @@
 578	1304	7541858134069011	quoridor_2.exe	bc4ab6e22eb5e20e
 49	340	7541867438438890	CMakeFiles/quoridor_2.dir/move/move.c.obj	9dae2f4380c5d6f5
 342	784	7541867441360509	quoridor_2.exe	bc4ab6e22eb5e20e
+19	305	7541875071199737	CMakeFiles/quoridor_2.dir/quitter/quitter.c.obj	80b10503d59163d9
+36	386	7541875071373268	CMakeFiles/quoridor_2.dir/partie4/partie4.c.obj	c9ad8aa9da91973d
+29	394	7541875071298889	CMakeFiles/quoridor_2.dir/partie2/partie2.c.obj	6faf85943607c69f
+10	415	7541875071110621	CMakeFiles/quoridor_2.dir/main.c.obj	4af61f15328371e5
+419	717	7541875075194215	quoridor_2.exe	bc4ab6e22eb5e20e
+46	254	7541882390977469	CMakeFiles/quoridor_2.dir/quitter/quitter.c.obj	80b10503d59163d9
+57	277	7541882391087872	CMakeFiles/quoridor_2.dir/partie2/partie2.c.obj	6faf85943607c69f
+281	573	7541882393321057	quoridor_2.exe	bc4ab6e22eb5e20e
+12	187	7541889521496240	CMakeFiles/quoridor_2.dir/quitter/quitter.c.obj	80b10503d59163d9
+189	453	7541889523256739	quoridor_2.exe	bc4ab6e22eb5e20e
+27	464	7541891547400357	CMakeFiles/quoridor_2.dir/quitter/quitter.c.obj	80b10503d59163d9
+466	2334	7541891551790862	quoridor_2.exe	bc4ab6e22eb5e20e

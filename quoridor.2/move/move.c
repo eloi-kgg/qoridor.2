@@ -94,7 +94,7 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
         //aller en haut
         else if (mvtp == 'h') {
             if (pionuti[0]-1 > 2 && plate[pionuti[0]-1][pionuti[1]] != 'B') {//vérifie que le pion n'est pas en bordure de tableau ni à côté d'une barrière qui pourrait l'empecher de bouger
-                if(((pionuti[0]-2==pionpres1[0] && pionuti[1]== pionpres3[1]) || (pionuti[0]-2==pionpres2[0] && pionuti[1]== pionpres2[1]) || (pionuti[0]-2==pionpres3[0]&& pionuti[1]== pionpres3[1])) && pionuti[0]-4 > 2) {
+                if(((pionuti[0]-2==pionpres1[0] && pionuti[1]== pionpres1[1]) || (pionuti[0]-2==pionpres2[0] && pionuti[1]== pionpres2[1]) || (pionuti[0]-2==pionpres3[0]&& pionuti[1]== pionpres3[1])) && pionuti[0]-4 > 2) {
                     if(plate[pionuti[0]-3][pionuti[1]] == 'B') {
                         printf("Il y une barriere derriere ce pion\n Vous ne pouvez donc pas sauter au-dessus\nChoisissez ou vous voulez aller:\n1:aller a gauche du pion\n2:aller a droite du pion");
                         fflush(stdin);
