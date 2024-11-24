@@ -119,8 +119,13 @@ void partie4(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
         placementb(plate,coordb);
 
         gagner(a,b,c,d,pfin);
+        char strch;
+        printf("\t\tEntrer 'q' pour quitter la partie\n");
+        fflush(stdin);
+        scanf("%c", &strch);
 
-        if (fin == 1){return;}
+        if (strch == 'q'){fin = 1;}
+
     }while(fin != 1);
 
 }

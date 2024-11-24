@@ -21,9 +21,9 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
     printf("%d\n",*pquitte);
 
     placement2(plate,a,b); //placement des pions en début de jeu pour deux joueurs
+    affiche(plate);//affichage du plateau avec les pions
 
     do {
-        affiche(plate); //affichage du plateau avec les pions
         do {
             printf("Voulez-vous placer une barriere ou vous deplacer ?\n");
             printf("Pour placer une barriere taper : 1 \n");
@@ -68,6 +68,8 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
 
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
         placementb(plate,coordb);
+        affiche(plate);
+
 
         gagner(a,b,c,d,pfin);
 
@@ -80,6 +82,5 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
 
         //if (fin == 1){return;}
     }while(fin != 1);
-    printf("terminer");
 
 }
