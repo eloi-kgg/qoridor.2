@@ -23,7 +23,8 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
 
         //aller à droite
         if (mvtp == 'd') {
-            if (pionuti[1]+1 < N && plate[pionuti[0]][pionuti[1]+1] != 'B') {
+            if (pionuti[1]+1 < N && plate[pionuti[0]][pionuti[1]+1] != 'B') {//vérifie que le pion n'est pas en bordure de tableau ni à côté d'une barrière qui pourrait l'empecher de bouger
+                plate[pionuti[0]][pionuti[1]] = ' ';//met un espace là où le pion était avant son mouvement
                 pionuti[1] = pionuti[1]+2;
                 fin = 0;
             }
@@ -34,6 +35,7 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
         //aller à gauche
         else if (mvtp == 'g') {
             if (pionuti[1]-1 > 0 && plate[pionuti[0]][pionuti[1]-1] != 'B') {
+                plate[pionuti[0]][pionuti[1]] = ' ';
                 pionuti[1] = pionuti[1]-2;
                 fin = 0;
             }
@@ -44,6 +46,7 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
         //aller en haut
         else if (mvtp == 'h') {
             if (pionuti[0]-1 > 1 && plate[pionuti[0]-1][pionuti[1]] != 'B') {
+                plate[pionuti[0]][pionuti[1]] = ' ';
                 pionuti[0] = pionuti[0]-2;
                 fin = 0;
             }
@@ -54,6 +57,7 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
         //aller en bas
         else if (mvtp == 'b') {
             if (pionuti[0]+1 < N && plate[pionuti[0]+1][pionuti[1]] != 'B') {
+                plate[pionuti[0]][pionuti[1]] = ' ';
                 pionuti[0] = pionuti[0]+2;
                 fin = 0;
             }
