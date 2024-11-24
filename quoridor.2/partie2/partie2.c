@@ -76,8 +76,10 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
         fflush(stdin);
         scanf("%c", &strch);
 
-        if (strch == 'q'){return;}
+        if (strch == 'q'){fin = 1;}
 
-        if (fin == 1){return;}
+        //if (fin == 1){return;}
     }while(fin != 1);
+    printf("terminer");
+
 }

@@ -66,9 +66,11 @@ int main(void) {
 
         if (nbj == 2) {
             partie2(plate,a,b,c,d,coordb,nbj);
+            choix = 0;
         }
         else if (nbj == 4) {
             partie4(plate,a,b,c,d,coordb,nbj);
+            choix = 0;
         }
 
     }while (choix != 0);
