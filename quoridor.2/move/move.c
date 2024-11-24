@@ -59,9 +59,9 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
         }
         //aller à gauche
         else if (mvtp == 'g') {
-            if (pionuti[1]-1 < 1 && plate[pionuti[0]][pionuti[1]-1] != 'B') {//vérifie que le pion n'est pas en bordure de tableau ni à côté d'une barrière qui pourrait l'empecher de bouger
-                if((pionuti[1]-2==pionpres1[1] || pionuti[1]-2==pionpres2[1] || pionuti[1]-2==pionpres3[1]) && pionuti[1]-4 < N - 1) {
-                    if(plate[pionuti[0]][pionuti[1]+3] == 'B') {
+            if (pionuti[1]-1 > 1 && plate[pionuti[0]][pionuti[1]-1] != 'B') {//vérifie que le pion n'est pas en bordure de tableau ni à côté d'une barrière qui pourrait l'empecher de bouger
+                if((pionuti[1]-2==pionpres1[1] || pionuti[1]-2==pionpres2[1] || pionuti[1]-2==pionpres3[1]) && pionuti[1]-4 > 1) {
+                    if(plate[pionuti[0]][pionuti[1]-3] == 'B') {
                         printf("Il y une barriere derriere ce pion\n Vous ne pouvez donc pas sauter au-dessus\nChoisissez ou vous voulez aller:\n1:aller au dessus du pion\n2:en dessous du pion");
                         fflush(stdin);
                         scanf("%d", &choix);
@@ -79,12 +79,12 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
                     }
                     else {
                         plate[pionuti[0]][pionuti[1]] = ' ';//met un espace là où le pion était avant son mouvement
-                        pionuti[1] = pionuti[1]+4;
+                        pionuti[1] = pionuti[1]-4;
                         fin = 0;
                     }
                 }else{
                     plate[pionuti[0]][pionuti[1]] = ' ';//met un espace là où le pion était avant son mouvement
-                    pionuti[1] = pionuti[1]+2;
+                    pionuti[1] = pionuti[1]-2;
                     fin = 0;
                 }
             }else{
@@ -93,44 +93,82 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
         }
         //aller en haut
         else if (mvtp == 'h') {
-                if (pionuti[1]-1 > 1 && plate[pionuti[0]][pionuti[1]-1] != 'B') {
-                    if((pionuti[1]-2==pionpres1[1] || pionuti[1]-2==pionpres2[1] || pionuti[1]-2==pionpres3[1]) && pionuti[1]-2 < N - 1) {
-                        if(plate[pionuti[0]][pionuti[1]-3] == 'B') {
-                            printf("Il y une barriere derriere ce pion\n Vous ne pouvez donc pas sauter au-dessus\nChoisissez ou vous voulez aller:\n1:aller au dessus du pion\n2:en dessous du pion");
-                            fflush(stdin);
-                            scanf("%d", &choix);
-                            if(choix == 1) {
-                                plate[pionuti[0]][pionuti[1]] = ' ';
-                                pionuti[1] = pionuti[1]-2;
-                                pionuti[0] = pionuti[0]-2;
-                                fin = 0;
-                            }else if(choix == 2) {
-                                plate[pionuti[0]][pionuti[1]] = ' ';
-                                pionuti[1] = pionuti[1]-2;
-                                pionuti[0] = pionuti[0]+2;
-                                fin = 0;
-                            }
-                        }else {
-                            plate[pionuti[0]][pionuti[1]] = ' ';//met un espace là où le pion était avant son mouvement
-                            pionuti[1] = pionuti[1]-4;
+            if (pionuti[0]-1 > 2 && plate[pionuti[0]-1][pionuti[1]] != 'B') {//vérifie que le pion n'est pas en bordure de tableau ni à côté d'une barrière qui pourrait l'empecher de bouger
+                if((pionuti[0]-2==pionpres1[0] || pionuti[0]-2==pionpres2[0] || pionuti[0]-2==pionpres3[0]) && pionuti[0]-4 > 2) {
+                    if(plate[pionuti[0]-3][pionuti[1]] == 'B') {
+                        printf("Il y une barriere derriere ce pion\n Vous ne pouvez donc pas sauter au-dessus\nChoisissez ou vous voulez aller:\n1:aller a gauche du pion\n2:aller a droite du pion");
+                        fflush(stdin);
+                        scanf("%d", &choix);
+                        if(choix == 1) {
+                            plate[pionuti[0]][pionuti[1]] = ' ';
+                            pionuti[1] = pionuti[1]-2;
+                            pionuti[0] = pionuti[0]-2;
+                            fin = 0;
+                        }else if(choix == 2) {
+                            plate[pionuti[0]][pionuti[1]] = ' ';
+                            pionuti[1] = pionuti[1]+2;
+                            pionuti[0] = pionuti[0]-2;
                             fin = 0;
                         }
                     }
                     else {
-                        printf("coup interdit\n");
+                        plate[pionuti[0]][pionuti[1]] = ' ';//met un espace là où le pion était avant son mouvement
+                        pionuti[0] = pionuti[0]-4;
+                        fin = 0;
                     }
+                }else{
+                    plate[pionuti[0]][pionuti[1]] = ' ';//met un espace là où le pion était avant son mouvement
+                    pionuti[0] = pionuti[0]-2;
+                    fin = 0;
                 }
-                //changement de joueur
-                if(fin == 0)
-                {
-                    if (uti!= 4){//s'il n'y a que 2 joeurs=> uti!= 2
-                        uti++;
+            }else{
+                printf("coup interdit\n");
+            }
+        }
+        //aller en bas
+        else if (mvtp == 'b') {
+            if (pionuti[0]+1 > N + 1 && plate[pionuti[0]+1][pionuti[1]] != 'B') {//vérifie que le pion n'est pas en bordure de tableau ni à côté d'une barrière qui pourrait l'empecher de bouger
+                if((pionuti[0]+2==pionpres1[0] || pionuti[0]+2==pionpres2[0] || pionuti[0]+2==pionpres3[0]) && pionuti[0]+4 > N + 1 ) {
+                    if(plate[pionuti[0]+3][pionuti[1]] == 'B') {
+                        printf("Il y une barriere derriere ce pion\n Vous ne pouvez donc pas sauter au-dessus\nChoisissez ou vous voulez aller:\n1:aller a gauche du pion\n2:aller a droite du pion");
+                        fflush(stdin);
+                        scanf("%d", &choix);
+                        if(choix == 1) {
+                            plate[pionuti[0]][pionuti[1]] = ' ';
+                            pionuti[1] = pionuti[1]-2;
+                            pionuti[0] = pionuti[0]+2;
+                            fin = 0;
+                        }else if(choix == 2) {
+                            plate[pionuti[0]][pionuti[1]] = ' ';
+                            pionuti[1] = pionuti[1]+2;
+                            pionuti[0] = pionuti[0]+2;
+                            fin = 0;
+                        }
                     }
-                    else{
-                        uti = 1;
+                    else {
+                        plate[pionuti[0]][pionuti[1]] = ' ';//met un espace là où le pion était avant son mouvement
+                        pionuti[0] = pionuti[0]-4;
+                        fin = 0;
                     }
+                }else{
+                    plate[pionuti[0]][pionuti[1]] = ' ';//met un espace là où le pion était avant son mouvement
+                    pionuti[0] = pionuti[0]-2;
+                    fin = 0;
                 }
+            }else{
+                printf("coup interdit\n");
+            }
+        }
+        //changement de joueur
+        if(fin == 0)
+        {
+            if (uti!= 4){//s'il n'y a que 2 joeurs=> uti!= 2
+                uti++;
+            }
+            else{
+                uti = 1;
             }
         }
     }while(fin != 0);
 }
+
