@@ -9,9 +9,15 @@ void quitter(int *pquitte) {
     scanf("%c", &strch);
     if (strch == 'q')
     {
+        printf("fin\n");
+        printf("%d\n",*pquitte);
         *pquitte = 1;
+        printf("%d\n",*pquitte);
         return;
     }
+    printf("pas fin\n");
+    printf("%d\n",*pquitte);
     *pquitte = 0;
+    printf("%d\n",*pquitte);
     return;
 }
