@@ -33,4 +33,5 @@ add_executable(quoridor_2 main.c
         sauvegarde/sauvegarde.h
         sauvegarde/sauvegarde.c
         gagner/gagner.c
-        partie2/partie2.c)
+        partie2/partie2.c
+        partie2/partie2.h)

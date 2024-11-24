@@ -63,7 +63,6 @@ int main(void)
         }
 
 
-
         if (nbj == 2) {
             partie2(plate,a,b,c,d,coordb,nbj);
         }
