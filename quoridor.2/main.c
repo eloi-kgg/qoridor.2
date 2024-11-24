@@ -58,13 +58,14 @@ int main(void)
         return 0;
     }
     crpseudo(name,pnbj);
+    plateau(plate); //initialisation plateau
     do {
         if(quitter(poinchoix)== 0) {
             return 0;
         }
 
 
-        plateau(plate); //initialisation plateau
+
         if (nbj == 2) {
             placement2(plate,a,b); //placement des pions en début de jeu pour deux joueurs
         }
@@ -79,7 +80,6 @@ int main(void)
         if (chact == 1) {barrieres(plate,coordb);}
         else if (chact == 2){move(plate,nbj,a,b,c,d,gagn);}//déplacement du premier joueur
 
-        plateau(plate); //remise a 0 du plateau
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
         placementb(plate,coordb);
         affiche(plate); //affichage du plateau avec les pions
@@ -93,7 +93,6 @@ int main(void)
         placementb(plate,coordb);
         affiche(plate); //affichage du plateau avec les pions
 
-        plateau(plate); //remise a 0 du plateau
         placement4(plate,a,b,c,d); //initialisation plateau avec nouveau placement des joueurs
         affiche(plate); //affichage du plateau avec les pions
     }while (choix != 0 || gagn[0] != 0);
