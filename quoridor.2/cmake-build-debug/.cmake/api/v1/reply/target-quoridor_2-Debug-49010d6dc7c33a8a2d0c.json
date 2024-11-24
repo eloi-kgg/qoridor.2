@@ -67,7 +67,8 @@
 				24,
 				25,
 				28,
-				29
+				29,
+				30
 			]
 		}
 	],
@@ -119,7 +120,8 @@
 				24,
 				25,
 				28,
-				29
+				29,
+				30
 			]
 		},
 		{
@@ -309,6 +311,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "gagner/gagner.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "partie2/partie2.c",
 			"sourceGroupIndex" : 0
 		}
 	],
