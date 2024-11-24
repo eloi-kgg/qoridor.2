@@ -31,4 +31,5 @@ add_executable(quoridor_2 main.c
         placementb/placementb.c
         placementb/placementb.h
         sauvegarde/sauvegarde.h
-        sauvegarde/sauvegarde.c)
+        sauvegarde/sauvegarde.c
+        gagner/gagner.c)
