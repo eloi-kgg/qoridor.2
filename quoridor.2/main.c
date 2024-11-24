@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "affichage/affichage.h"
 #include "barriere/barriere.h"
-#include "choixact/choixact.h"
 #include "move/move.h"
 #include "menu/menu.h"
 #include "placement2/placement2.h"
@@ -13,6 +12,7 @@
 #include "regle/regle.h"
 #include "sauvegarde/sauvegarde.h"
 #include "partie2/partie2.h"
+#include "partie4/partie4.h"
 
 int main(void) {
     //Dans le plateau les ligne sont la premières valeur du plateau et les colonnes la deuxième, donc des postions : y;x
@@ -68,8 +68,8 @@ int main(void) {
             partie2(plate,a,b,c,d,coordb,nbj);
         }
         else if (nbj == 4) {
-            placement4(plate,a,b,c,d);
-        }//placement des pions en début de jeu pour quatre joueurs
+            partie4(plate,a,b,c,d,coordb,nbj);
+        }
 
     }while (choix != 0);
     return 0;

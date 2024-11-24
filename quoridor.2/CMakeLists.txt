@@ -8,8 +8,6 @@ add_executable(quoridor_2 main.c
         menu/menu.c
         quitter/quitter.c
         quitter/quitter.h
-        choixact/choixact.c
-        choixact/choixact.h
         plateau/plateau.h
         plateau/plateau.c
         placement2/placement2.c
@@ -34,4 +32,7 @@ add_executable(quoridor_2 main.c
         sauvegarde/sauvegarde.c
         gagner/gagner.c
         partie2/partie2.c
-        partie2/partie2.h)
+        partie2/partie2.h
+        partie4/partie4.c
+        partie4/partie4.h)
+
