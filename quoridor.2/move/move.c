@@ -7,12 +7,12 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
     int fin = 1;
     int choix;
     int uti = 1;
-    if (pionuti[2] == 102){uti = 2;}
-    else if (pionuti[2] == 103){uti = 3;}
-    else if (pionuti[2] == 104){uti = 4;}
+    if (pionuti[2] == 102){uti = 2;} //pion présent sur le plateau mais n'étant pas celui du joueur effectuant l'action
+    else if (pionuti[2] == 103){uti = 3;} //pion présent sur le plateau mais n'étant pas celui du joueur effectuant l'action
+    else if (pionuti[2] == 104){uti = 4;} //pion présent sur le plateau mais n'étant pas celui du joueur effectuant l'action
     char mvtp;
 
-    //toutes les possibilités du joueurs
+    //demande au joueur dans quelle direction il souhaite aller
     do {
         printf("Au tour du joueur %d \n",uti);
         printf("Si vous voulez deplacer le pion a droite, entrer 'd'\n");
@@ -31,7 +31,7 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
                         fflush(stdin);
                         scanf("%d", &choix);
                         if(choix == 1) {
-                            plate[pionuti[0]][pionuti[1]] = ' ';
+                            plate[pionuti[0]][pionuti[1]] = ' ';//
                             pionuti[1] = pionuti[1]+2;
                             pionuti[0] = pionuti[0]-2;
                             fin = 0;
@@ -56,6 +56,7 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
                 printf("coup interdit\n");
             }
         }
+
         //aller à gauche
         else if (mvtp == 'g') {
             if (pionuti[1]-1 > 1 && plate[pionuti[0]][pionuti[1]-1] != 'B') {//vérifie que le pion n'est pas en bordure de tableau ni à côté d'une barrière qui pourrait l'empecher de bouger
@@ -90,6 +91,7 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
                 printf("coup interdit\n");
             }
         }
+
         //aller en haut
         else if (mvtp == 'h') {
             if (pionuti[0]-1 > 2 && plate[pionuti[0]-1][pionuti[1]] != 'B') {//vérifie que le pion n'est pas en bordure de tableau ni à côté d'une barrière qui pourrait l'empecher de bouger
@@ -124,6 +126,7 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
                 printf("coup interdit\n");
             }
         }
+
         //aller en bas
         else if (mvtp == 'b') {
             if (pionuti[0]+2 < N - 1 && plate[pionuti[0]+1][pionuti[1]] != 'B') {//vérifie que le pion n'est pas en bordure de tableau ni à côté d'une barrière qui pourrait l'empecher de bouger
@@ -158,6 +161,7 @@ void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpre
                 printf("coup interdit\n");
             }
         }
+
         //changement de joueur
         if(fin == 0)
         {
