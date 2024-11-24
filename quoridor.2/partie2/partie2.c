@@ -16,6 +16,8 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
     int chact = 0;
     int valide = 0;
     int valide2 = 0;
+    int quitte = 0;
+    int *pquitte = &quitte;
 
     placement2(plate,a,b); //placement des pions en début de jeu pour deux joueurs
 
@@ -68,6 +70,8 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
 
         gagner(a,b,c,d,pfin);
 
+        quitter(pquitte);
+        if(quitte == 1){return;}
 
         if (fin == 1){return;}
     }while(fin != 1);

@@ -2,13 +2,16 @@
 #include "quitter.h"
 #include "../sauvegarde/sauvegarde.h"
 
-int quitter(char strch) {
-    printf("\t\tEntrer 'q' pour quitter, 'c' pour continuer la partie\n");
+void quitter(int *pquitte) {
+    char strch;
+    printf("\t\tEntrer 'q' pour quitter la partie\n");
     fflush(stdin);
     scanf("%c", &strch);
     if (strch == 'q')
     {
-        return 0;
+        *pquitte = 1;
+        return;
     }
-    return 1;
+    *pquitte = 0;
+    return;
 }

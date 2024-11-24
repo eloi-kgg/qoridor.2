@@ -6,6 +6,6 @@
 
 #define N 20 //taille du plateau
 
-int quitter(char strch); //menu utiliser à chaque tour de boucle du programme permettant de quitter le jeu
+void quitter(int *pquitte);  //menu utiliser à chaque tour de boucle du programme permettant de quitter le jeu
 
 #endif //QUITTER_H
