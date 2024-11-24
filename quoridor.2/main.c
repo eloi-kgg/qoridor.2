@@ -12,6 +12,7 @@
 #include "quitter/quitter.h"
 #include "regle/regle.h"
 #include "sauvegarde/sauvegarde.h"
+#include "partie2/partie2.h"
 
 int main(void)
 {
@@ -44,8 +45,6 @@ int main(void)
     int nbj = 2; //choix du nombre de joueur
     int* pnbj = &nbj;
 
-    int gagn[2] = {1,0};//fin du jeu si un joueur arrive a l'opposé du terrain
-    int idjg = 0; //numero du joueur gagnant
 
     int score[4][2] = {{101,0},{102,0},{103,0},{104,0}};//sauvegarde des scores de chacun des joueurs, {id,score}
 
@@ -66,33 +65,12 @@ int main(void)
 
 
         if (nbj == 2) {
-            placement2(plate,a,b); //placement des pions en début de jeu pour deux joueurs
+            partie2(plate,a,b,c,d,coordb,nbj);
         }
         else if (nbj == 4) {
             placement4(plate,a,b,c,d);
         }//placement des pions en début de jeu pour quatre joueurs
-        affiche(plate); //affichage du plateau avec les pions
 
-
-        choixact(poinchact);
-        printf("%d\n",chact);
-        if (chact == 1) {barrieres(plate,coordb);}
-        else if (chact == 2){move(plate,nbj,a,b,c,d,gagn);}//déplacement du premier joueur
-
-        placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
-        placementb(plate,coordb);
-        affiche(plate); //affichage du plateau avec les pions
-
-
-        choixact(poinchact);
-        printf("%d\n",chact);
-        if (chact == 1) {barrieres(plate,coordb);}
-        else if (chact == 2){move(plate,nbj,b,a,c,d,gagn);}//déplacement du premier joueur
-        placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
-        placementb(plate,coordb);
-        affiche(plate); //affichage du plateau avec les pions
-        
-    }while (choix != 0 || gagn[0] != 0);
-    if (gagn[0] == 0) {printf("Bravo aux joueur ");}
+    }while (choix != 0);
     return 0;
 }
