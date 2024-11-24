@@ -3,7 +3,6 @@
 #include "barriere/barriere.h"
 #include "choixact/choixact.h"
 #include "move/move.h"
-#include "joueurmalp/joueurmalp.h"
 #include "menu/menu.h"
 #include "placement2/placement2.h"
 #include "placement4/placement4.h"

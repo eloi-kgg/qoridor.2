@@ -18,7 +18,7 @@ void sauvegarde(char plate[N][N], int a[3], int b[3], int c[3], int d[3], int j)
     //plateau
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-//ecrire le caractere
+        //ecrire le caractere
             fputc(plate[i][j], p);
         }
         fputc('\n', p);
