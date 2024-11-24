@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "move.h"
-#include "../joueurmalp/joueurmalp.h"
 
 //module placement
 void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3]) {
