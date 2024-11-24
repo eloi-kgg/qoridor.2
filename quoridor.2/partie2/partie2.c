@@ -12,6 +12,7 @@
 
 void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coordb[3], int nbj) {
     int fin = 0;
+    int *pfin = &fin;
     int chact = 0;
     int valide = 0;
     int valide2 = 0;
@@ -36,7 +37,7 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
         }//déplacement du premier joueur
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
         placementb(plate,coordb);
-        fin = gagner(a,b,c,d);
+        gagner(a,b,c,d,pfin);
 
 
         affiche(plate); //affichage du plateau avec les pions
@@ -58,7 +59,7 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
 
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
         placementb(plate,coordb);
-        fin = gagner(a,b,c,d);
+        gagner(a,b,c,d,pfin);
     }while(fin != 1);
 
 }

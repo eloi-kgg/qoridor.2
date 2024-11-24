@@ -4,6 +4,6 @@
 #define GAGNER_H
 
 
-int gagner(int piona[3],int pionb[3],int pionc[3],int piond[3]);
+void gagner(int piona[3],int pionb[3],int pionc[3],int piond[3], int *pfin);
 
 #endif //GAGNER_H
