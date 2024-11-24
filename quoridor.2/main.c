@@ -63,10 +63,6 @@ int main(void) {
     crpseudo(name,pnbj);
     plateau(plate); //initialisation plateau
     do {
-        if(quitter(poinchoix)== 0) {
-            return 0;
-        }
-
 
         if (nbj == 2) {
             partie2(plate,a,b,c,d,coordb,nbj);

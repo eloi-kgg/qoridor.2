@@ -50,4 +50,6 @@ add_executable(qoridor_2
     quoridor.2/reprendre/reprendre.h
     quoridor.2/sauvegarde/sauvegarde.c
     quoridor.2/sauvegarde/sauvegarde.h
-    quoridor.2/main.c)
+    quoridor.2/main.c
+        quoridor.2/partie2/partie2.c
+        quoridor.2/gagner/gagner.c)

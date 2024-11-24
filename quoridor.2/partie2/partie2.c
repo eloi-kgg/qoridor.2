@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include "partie2.h"
+
+#include "../quitter/quitter.h"
+#include "../sauvegarde/sauvegarde.h"
 #include "../gagner/gagner.h"
 #include "../move/move.h"
 #include "../plateau/plateau.h"
@@ -16,6 +19,9 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
     int chact = 0;
     int valide = 0;
     int valide2 = 0;
+    char qtt;
+    int quitte = 1;
+
     placement2(plate,a,b); //placement des pions en début de jeu pour deux joueurs
 
     do {
@@ -66,6 +72,12 @@ void partie2(char plate[N][N],char a[3],char b[3],char c[3],char d[3], int coord
         placementb(plate,coordb);
 
         gagner(a,b,c,d,pfin);
+
+        quitte = quitter(qtt);
+        if (quitte == 0) {
+            sauvegarde(plate,a,b,c,d,nbj);
+            return;
+        }
 
         if (fin == 1){return;}
     }while(fin != 1);
