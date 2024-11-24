@@ -91,9 +91,7 @@ int main(void)
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
         placementb(plate,coordb);
         affiche(plate); //affichage du plateau avec les pions
-
-        placement4(plate,a,b,c,d); //initialisation plateau avec nouveau placement des joueurs
-        affiche(plate); //affichage du plateau avec les pions
+        
     }while (choix != 0 || gagn[0] != 0);
     if (gagn[0] == 0) {printf("Bravo aux joueur ");}
     return 0;
